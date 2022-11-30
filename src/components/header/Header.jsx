@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
 import './header.scss';
-import Modal from '../modal/Modal';
 import { getDisplayedMonth } from '../../utils/dateUtils';
 
-const Header = ({
-  showModal,
-  setShowModal,
-  weekStartDate,
-  setWeekStartDate,
-}) => {
+const Header = ({ setShowModal, weekStartDate, setWeekStartDate }) => {
   return (
     <>
       <header className='header'>
@@ -18,7 +12,6 @@ const Header = ({
         >
           <i className='fas fa-plus create-event-btn__icon'></i>Create
         </button>
-        <Modal showModal={showModal} setShowModal={setShowModal} />
         <div className='navigation'>
           <button
             className='navigation__today-btn button'

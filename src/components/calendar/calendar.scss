@@ -58,10 +58,20 @@
   &__day-name {
     font-size: 14px;
     text-transform: uppercase;
+    &-today {
+      color: cornflowerblue;
+    }
   }
 
   &__day-number {
     font-size: 22px;
+
+    &-today {
+      color: #fff;
+      background-color: cornflowerblue;
+      padding: 5px;
+      border-radius: 30%;
+    }
   }
 }
 
