@@ -4,7 +4,7 @@ import moment from 'moment';
 
 import './modal.scss';
 
-const Modal = ({ showModal, setShowModal, setEvents, fetchEvents }) => {
+const Modal = ({ showModal, setShowModal, fetchEvents }) => {
   const [formData, setFormData] = useState({
     title: '',
     date: '',
@@ -43,10 +43,6 @@ const Modal = ({ showModal, setShowModal, setEvents, fetchEvents }) => {
     createEvent(eventObj).then(() => fetchEvents());
     setShowModal(false);
   };
-
-  useEffect(() => {
-    fetchEvents();
-  }, []);
 
   if (!showModal) return null;
   return (

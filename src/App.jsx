@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/header/Header.jsx';
 import Calendar from './components/calendar/Calendar.jsx';
 import Modal from './components/modal/Modal.jsx';
@@ -18,9 +18,13 @@ const App = () => {
   const fetchEvents = () => {
     fetchEventsList().then((eventsList) => setEvents(eventsList));
   };
+  useEffect(() => {
+    fetchEvents();
+    console.log(events);
+  }, []);
 
   return (
-    <>
+    <div>
       <Header
         setShowModal={setShowModal}
         weekStartDate={weekStartDate}
@@ -34,10 +38,9 @@ const App = () => {
       <Modal
         showModal={showModal}
         setShowModal={setShowModal}
-        setEvents={setEvents}
         fetchEvents={fetchEvents}
       />
-    </>
+    </div>
   );
 };
 

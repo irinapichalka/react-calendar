@@ -10,8 +10,10 @@ const Navigation = ({ weekDates }) => {
   return (
     <header className='calendar__header'>
       {weekDates.map((dayDate) => {
-        isToday = todayDate.getDate() === dayDate.getDate();
-        console.log(isToday);
+        isToday =
+          todayDate.getDate() === dayDate.getDate() &&
+          todayDate.getDay() === dayDate.getDay() &&
+          todayDate.getMonth() === dayDate.getMonth();
         const todayDayClass = classNames('day-label__day-name', {
           'day-label__day-name-today': isToday,
         });
@@ -20,7 +22,7 @@ const Navigation = ({ weekDates }) => {
         });
 
         return (
-          <div className='calendar__day-label day-label'>
+          <div key={Math.random()} className='calendar__day-label day-label'>
             <span className={todayDayClass}>{days[dayDate.getDay()]}</span>
             <span className={todayNumberClass}>{dayDate.getDate()}</span>
           </div>

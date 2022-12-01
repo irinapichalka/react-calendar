@@ -3,9 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Navigation from './../navigation/Navigation';
 import Week from '../week/Week';
 import Sidebar from '../sidebar/Sidebar';
-
 import './calendar.scss';
-//import exEvents from '../../gateway/events';
 
 const Calendar = ({ weekDates, events, fetchEvents }) => {
   console.log(events);

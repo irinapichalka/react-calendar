@@ -49,11 +49,11 @@ export const months = [
 
 export const getDisplayedMonth = (date) => {
   const weekStart = getWeekStartDate(date);
-  const weekEnd = moment(date).add('days', 6);
+  const weekEnd = moment(date).add(6, 'days');
   const startMonth = moment(weekStart).month();
-  const startYear = moment(weekStart).years();
+  const startYear = moment(weekStart).year();
   const endMonth = moment(weekEnd).month();
-  const endYear = moment(weekEnd).years();
+  const endYear = moment(weekEnd).year();
   const isSameMonth = startMonth === endMonth;
   if (isSameMonth) {
     return `${months[startMonth]} ${startYear}`;
