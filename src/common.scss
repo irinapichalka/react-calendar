@@ -43,9 +43,11 @@
   &__content {
     position: absolute;
     background: #fff;
-    padding: 16px;
+    padding: 4px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    left: 80%;
+    z-index: 999;
   }
 }
 

@@ -24,7 +24,7 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <Header
         setShowModal={setShowModal}
         weekStartDate={weekStartDate}
@@ -40,7 +40,7 @@ const App = () => {
         setShowModal={setShowModal}
         fetchEvents={fetchEvents}
       />
-    </div>
+    </>
   );
 };
 
