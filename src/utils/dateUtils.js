@@ -1,4 +1,5 @@
-import moment from 'moment';
+import moment from "moment";
+
 export const getWeekStartDate = (date) => {
   const dateCopy = new Date(date);
   const dayOfWeek = dateCopy.getDay();
@@ -21,35 +22,33 @@ export const generateWeekRange = (startDate) => {
 };
 
 export const getDateTime = (date, time) => {
-  const [hours, minutes] = time.split(':');
+  const [hours, minutes] = time.split(":");
   const withHours = new Date(new Date(date).setHours(Number(hours)));
   const withMinutes = new Date(new Date(withHours).setMinutes(Number(minutes)));
   return withMinutes;
 };
 
-export const formatMins = (mins) => {
-  return mins < 10 ? `0${mins}` : mins;
-};
+export const formatMins = (mins) => (mins < 10 ? `0${mins}` : mins);
 
-export const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+export const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 export const months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 
 export const getDisplayedMonth = (date) => {
   const weekStart = getWeekStartDate(date);
-  const weekEnd = moment(date).add(6, 'days');
+  const weekEnd = moment(date).add(6, "days");
   const startMonth = moment(weekStart).month();
   const startYear = moment(weekStart).year();
   const endMonth = moment(weekEnd).month();
