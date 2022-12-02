@@ -1,8 +1,8 @@
 import React from 'react';
-
 import Event from '../event/Event';
 import { formatMins } from '../../../src/utils/dateUtils.js';
 import Line from '../line/Line';
+import PropTypes from 'prop-types';
 
 const Hour = ({ dataHour, hourEvents, fetchEvents, toDrawHr }) => {
   let ifHour = false;
@@ -47,6 +47,17 @@ const Hour = ({ dataHour, hourEvents, fetchEvents, toDrawHr }) => {
       })}
     </div>
   );
+};
+
+Hour.propTypes = {
+  dataHour: PropTypes.number.isRequired,
+  hourEvents: PropTypes.array,
+  toDrawHr: PropTypes.bool.isRequired,
+  fetchEvents: PropTypes.func.isRequired,
+};
+
+Hour.defaultProps = {
+  hourEvents: [],
 };
 
 export default Hour;

@@ -12,7 +12,6 @@ const Event = ({ height, marginTop, title, time, id, fetchEvents }) => {
     marginTop,
   };
   const onDelete = (id) => {
-    console.log(id);
     deleteEvent(id).then(() => fetchEvents());
     setShowPopup(false);
   };

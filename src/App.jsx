@@ -20,7 +20,6 @@ const App = () => {
   };
   useEffect(() => {
     fetchEvents();
-    console.log(events);
   }, []);
 
   return (

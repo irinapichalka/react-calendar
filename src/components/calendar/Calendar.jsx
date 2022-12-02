@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-
+import React from 'react';
 import Navigation from './../navigation/Navigation';
 import Week from '../week/Week';
 import Sidebar from '../sidebar/Sidebar';
 import './calendar.scss';
+import PropTypes from 'prop-types';
 
 const Calendar = ({ weekDates, events, fetchEvents }) => {
-  console.log(events);
   return (
     <section className='calendar'>
       <Navigation weekDates={weekDates} />
@@ -22,6 +21,16 @@ const Calendar = ({ weekDates, events, fetchEvents }) => {
       </div>
     </section>
   );
+};
+
+Calendar.propTypes = {
+  weekDates: PropTypes.array.isRequired,
+  events: PropTypes.array,
+  fetchEvents: PropTypes.func.isRequired,
+};
+
+Calendar.defaultProps = {
+  events: [],
 };
 
 export default Calendar;

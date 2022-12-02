@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { createEvent, fetchEventsList } from '../../gateway/events';
 import moment from 'moment';
-
+import PropTypes from 'prop-types';
 import './modal.scss';
 
 const Modal = ({ showModal, setShowModal, fetchEvents }) => {
@@ -107,6 +107,12 @@ const Modal = ({ showModal, setShowModal, fetchEvents }) => {
       </div>
     </div>
   );
+};
+
+Modal.propTypes = {
+  showModal: PropTypes.bool.isRequired,
+  setShowModal: PropTypes.func.isRequired,
+  fetchEvents: PropTypes.func.isRequired,
 };
 
 export default Modal;
