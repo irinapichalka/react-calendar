@@ -41,6 +41,13 @@ const Modal = ({ showModal, setShowModal, fetchEvents }) => {
     eventObj.dateTo = new Date(year, month, day, hourEnd, minEnd, 0, 0);
 
     createEvent(eventObj).then(() => fetchEvents());
+    setFormData({
+      title: "",
+      date: "",
+      startTime: "",
+      endTime: "",
+      description: "",
+    });
     setShowModal(false);
   };
 
