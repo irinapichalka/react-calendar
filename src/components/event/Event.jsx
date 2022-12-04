@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import { deleteEvent } from '../../gateway/events';
-import Popup from '../popup/Popup';
-import PropTypes from 'prop-types';
-
-import './event.scss';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { deleteEvent } from "../../gateway/events";
+import Popup from "../popup/Popup";
+import "./event.scss";
 
 const Event = ({ height, marginTop, title, time, id, fetchEvents }) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -19,11 +18,11 @@ const Event = ({ height, marginTop, title, time, id, fetchEvents }) => {
     <>
       <div
         style={eventStyle}
-        className='event'
+        className="event"
         onClick={() => setShowPopup(true)}
       >
-        <div className='event__title'>{title}</div>
-        <div className='event__time'>{time}</div>
+        <div className="event__title">{title}</div>
+        <div className="event__time">{time}</div>
       </div>
       {showPopup && (
         <Popup onDelete={onDelete} id={id} marginTop={marginTop + height} />
@@ -41,9 +40,9 @@ Event.propTypes = {
 };
 
 Event.defaultProps = {
-  title: 'my new event',
-  height: '60',
-  marginTop: '0',
+  title: "my new event",
+  height: "60",
+  marginTop: "0",
 };
 
 export default Event;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const Line = () => {
   const [marginTopHr, setMarginTopHr] = useState(new Date().getMinutes());
@@ -16,10 +16,10 @@ const Line = () => {
   return (
     <div
       style={{
-        position: 'absolute',
-        backgroundColor: 'red',
-        width: '100%',
-        height: 1 + 'px',
+        position: "absolute",
+        backgroundColor: "red",
+        width: "100%",
+        height: `${1}px`,
         marginTop: `${marginTopHr}px`,
       }}
     ></div>

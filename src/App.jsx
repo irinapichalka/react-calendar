@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import Header from './components/header/Header.jsx';
-import Calendar from './components/calendar/Calendar.jsx';
-import Modal from './components/modal/Modal.jsx';
-import { fetchEventsList } from './gateway/events.js';
-
-import { getWeekStartDate, generateWeekRange } from '../src/utils/dateUtils.js';
-
-import './common.scss';
+import React, { useState, useEffect } from "react";
+import Header from "./components/header/Header.jsx";
+import Calendar from "./components/calendar/Calendar.jsx";
+import Modal from "./components/modal/Modal.jsx";
+import { fetchEventsList } from "./gateway/events.js";
+import { getWeekStartDate, generateWeekRange } from "./utils/dateUtils.js";
+import "./common.scss";
 
 const App = () => {
   const [weekStartDate, setWeekStartDate] = useState(new Date());

@@ -1,8 +1,8 @@
-import React from 'react';
-import Event from '../event/Event';
-import { formatMins } from '../../../src/utils/dateUtils.js';
-import Line from '../line/Line';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
+import Event from "../event/Event";
+import { formatMins } from "../../utils/dateUtils.js";
+import Line from "../line/Line";
 
 const Hour = ({ dataHour, hourEvents, fetchEvents, toDrawHr }) => {
   let ifHour = false;
@@ -12,11 +12,7 @@ const Hour = ({ dataHour, hourEvents, fetchEvents, toDrawHr }) => {
   const draw = toDrawHr && ifHour;
 
   return (
-    <div
-      key={Math.random()}
-      className='calendar__time-slot'
-      data-time={dataHour + 1}
-    >
+    <div className="calendar__time-slot" data-time={dataHour + 1}>
       {draw && <Line />}
       {/* if no events in the current hour nothing will render here */}
       {hourEvents.map(({ id, dateFrom, dateTo, title }) => {
@@ -28,21 +24,19 @@ const Hour = ({ dataHour, hourEvents, fetchEvents, toDrawHr }) => {
         )}`;
 
         return (
-          <>
-            <Event
-              key={id}
-              //calculating event height = duration of event in minutes
-              height={
-                (new Date(dateTo).getTime() - new Date(dateFrom).getTime()) /
-                (1000 * 60)
-              }
-              marginTop={new Date(dateFrom).getMinutes()}
-              time={`${eventStart} - ${eventEnd}`}
-              title={title}
-              id={id}
-              fetchEvents={fetchEvents}
-            />
-          </>
+          <Event
+            key={id}
+            // calculating event height = duration of event in minutes
+            height={
+              (new Date(dateTo).getTime() - new Date(dateFrom).getTime()) /
+              (1000 * 60)
+            }
+            marginTop={new Date(dateFrom).getMinutes()}
+            time={`${eventStart} - ${eventEnd}`}
+            title={title}
+            id={id}
+            fetchEvents={fetchEvents}
+          />
         );
       })}
     </div>

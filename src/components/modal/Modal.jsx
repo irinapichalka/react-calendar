@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { createEvent, fetchEventsList } from '../../gateway/events';
-import moment from 'moment';
-import PropTypes from 'prop-types';
-import './modal.scss';
+import React, { useEffect, useState } from "react";
+import moment from "moment";
+import PropTypes from "prop-types";
+import { createEvent, fetchEventsList } from "../../gateway/events";
+import "./modal.scss";
 
 const Modal = ({ showModal, setShowModal, fetchEvents }) => {
   const [formData, setFormData] = useState({
-    title: '',
-    date: '',
-    startTime: '',
-    endTime: '',
-    description: '',
+    title: "",
+    date: "",
+    startTime: "",
+    endTime: "",
+    description: "",
   });
 
   const handleChange = (event) => {
@@ -46,58 +46,58 @@ const Modal = ({ showModal, setShowModal, fetchEvents }) => {
 
   if (!showModal) return null;
   return (
-    <div className='modal overlay'>
-      <div className='modal__content'>
-        <div className='create-event'>
+    <div className="modal overlay">
+      <div className="modal__content">
+        <div className="create-event">
           <button
-            className='create-event__close-btn'
+            className="create-event__close-btn"
             onClick={() => setShowModal(false)}
           >
             +
           </button>
-          <form className='event-form' onSubmit={(event) => formSubmit(event)}>
+          <form className="event-form" onSubmit={(event) => formSubmit(event)}>
             <input
-              type='text'
-              name='title'
-              placeholder='Title'
-              className='event-form__field'
+              type="text"
+              name="title"
+              placeholder="Title"
+              className="event-form__field"
               value={formData.title}
               onChange={(event) => handleChange(event)}
             />
-            <div className='event-form__time'>
+            <div className="event-form__time">
               <input
-                type='date'
-                name='date'
-                className='event-form__field'
+                type="date"
+                name="date"
+                className="event-form__field"
                 value={formData.date}
                 onChange={(event) => handleChange(event)}
               />
               <input
-                type='time'
-                name='startTime'
-                className='event-form__field'
+                type="time"
+                name="startTime"
+                className="event-form__field"
                 value={formData.startTime}
                 onChange={(event) => handleChange(event)}
               />
               <span>-</span>
               <input
-                type='time'
-                name='endTime'
-                className='event-form__field'
+                type="time"
+                name="endTime"
+                className="event-form__field"
                 value={formData.endTime}
                 onChange={(event) => handleChange(event)}
               />
             </div>
             <textarea
-              name='description'
-              placeholder='Description'
-              className='event-form__field'
+              name="description"
+              placeholder="Description"
+              className="event-form__field"
               value={formData.description}
               onChange={(event) => handleChange(event)}
             ></textarea>
             <button
-              type='submit'
-              className='event-form__submit-btn'
+              type="submit"
+              className="event-form__submit-btn"
               onClick={() => onCreate()}
             >
               Create
